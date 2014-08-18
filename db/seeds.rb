@@ -12,5 +12,5 @@ Post.create([{
 	body: "Body of post",
 	url: "http://mattcollier.io/"
 	
-
+	
 }])
