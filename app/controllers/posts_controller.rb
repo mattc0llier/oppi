@@ -10,8 +10,13 @@ class PostsController < ApplicationController
 
   def create
   	@post = Post.new(post_params)
-  	@post.save
-  	redirect_to root_path
+  	if @post.save
+			flash[:success] = "Thank you for submiting your story!"
+			redirect_to root_path
+		else
+			flash[:error] = "not this time buddy, change it up!"
+			render :new
+		end	
   end
 
   private
