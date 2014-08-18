@@ -1,6 +1,7 @@
 <%= @posts.each do |p| %>
 
 	<h2><%= p.title %></h2>
+	<%= image_tag p.image.url %>
 	<h3><%= p.body %></h3>
 	<h3><%= link_to p.url %></h3>
 
