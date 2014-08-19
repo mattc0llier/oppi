@@ -4,6 +4,10 @@ class PostsController < ApplicationController
   	@posts = Post.all
   end
 
+  def show
+  	@post = Post.find(params[:id])	
+  end
+
   def new
   	@post = Post.new
   end
@@ -17,6 +21,25 @@ class PostsController < ApplicationController
 			flash[:error] = "not this time buddy, change it up!"
 			render :new
 		end	
+
+	def edit
+		@post = Post.find(params[:id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		if @post.update(post_params)
+			flash[:success] = "Thank you for updating your story"
+			redirect_to post_path(@post)
+		else
+			flash[:error] = "not this time buddy, change it!"
+			render :edit
+		end
+	end
+
+	def destroy
+	end
+
   end
 
   private

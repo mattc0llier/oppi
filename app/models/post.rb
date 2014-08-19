@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 	validates_format_of :url, with: URI.regexp
 	validates :url, presence: true
 
-	validates :title, presence: true, 
+	validates :title, presence: true 
 
 	validates :body, length: { maximum: 1000, minimum: 20 }
 end

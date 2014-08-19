@@ -1,0 +1,10 @@
+<%= simple_form_for @post(params[:id]) do |f| %>
+	
+	<%= f.input :title %>
+	<%= f.input :image %>
+	<%= f.input :body %>
+	<%= f.input :url %>
+
+	<%= f.button :submit %>
+
+<% end %>
