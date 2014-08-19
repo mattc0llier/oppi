@@ -38,6 +38,14 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
+		@post = Post.find(params[:id])
+		if @post.present?
+			flash[:success] = "Successfully destroyed '#{@post.title}'" 
+			@post.destroy
+		else 
+			flash[:error] = "Oops, no post found with id #{params [:id]}"
+		end
+		redirect_to root_path
 	end
 
   end
