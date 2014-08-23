@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-root "posts#index"
+root "projects#index"
   
+  resources :projects
   resources :posts 
   
 end
