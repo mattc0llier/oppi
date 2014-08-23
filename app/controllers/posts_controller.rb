@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   end
 
   def show
-  	@post = Post.find(params[:id])	
+  	@project = Project.find(params[:project_id])
+  	@post = @project.posts.find(post_params)	
   end
 
   def new
@@ -53,6 +54,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-		params.require(:post).permit(:title, :body, :url, :image)
+		params.require(:post).permit(:title, :body, :url, :image, :project_id)
 	end
 end

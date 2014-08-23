@@ -5,6 +5,6 @@
 
 	<p> This was posted <%= time_ago_in_words @project.created_at %> ago</p>
 
-	<%= link_to "Create Post", new_project_post_path(params[:id]) %>
+	<%= link_to "Create Post", new_project_post_path(@project.id) %>
 
 	
