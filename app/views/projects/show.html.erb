@@ -7,4 +7,14 @@
 
 	<%= link_to "Create Post", new_project_post_path(@project.id) %>
 
-	
+	<% @project.posts.each do |post| %>
+
+		<h2><%= link_to post.title %></h2>
+
+		<p><%= post.body %></p>
+
+		<p><%= post.url %></p>
+
+		<%= time_ago_in_words post.created_at %> ago
+
+	<% end %>
