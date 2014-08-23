@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def new
-  	@post = Post.new
+  	@project = Project.find(params[:id])
+  	@post = @project.posts.new
   end
 
   def create
