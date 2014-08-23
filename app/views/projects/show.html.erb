@@ -11,6 +11,8 @@
 
 		<h2><%= link_to post.title, project_post_path(post.project_id, post) %></h2>
 
+		<%= image_tag post.image.url %>
+
 		<p><%= post.body %></p>
 
 		<p><%= post.url %></p>
