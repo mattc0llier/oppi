@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   end
 
   def create
-  	@post = Post.new(post_params)
+  	@project = Project.find(params[:project_id])
+  	@post = @project.posts.new(post_params)
   	if @post.save
 			flash[:success] = "Thank you for submiting your story!"
 			redirect_to root_path
