@@ -9,7 +9,7 @@
 
 	<% @project.posts.each do |post| %>
 
-		<h2><%= link_to post.title %></h2>
+		<h2><%= link_to post.title, project_post_path(post.project_id, post) %></h2>
 
 		<p><%= post.body %></p>
 
