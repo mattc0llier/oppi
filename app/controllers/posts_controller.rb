@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 			flash[:error] = "not this time buddy, change it up!"
 			render :new
 		end	
-end
+	end
 
 	def edit
 		@post = Post.find(params[:id])

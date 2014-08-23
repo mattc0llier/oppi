@@ -1,15 +1,31 @@
 class ProjectsController < ApplicationController
 
 def index
+	@projects = Project.all
 end
 
 def show
+  	@project = Project.find(params[:id])	
 end
 
 def new
+  	@project = Project.new
 end
 
 def create
+	@project = Project.new(project_params)
+  	if @project.save
+		flash[:success] = "Thank you for submiting your story!"
+		redirect_to root_path
+	else
+		flash[:error] = "not this time buddy, change it up!"
+		render :new
+	end	
+end
+
+private
+def project_params
+	params.require(:project).permit(:title, :body, :url, :image)
 end
 
 

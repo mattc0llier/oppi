@@ -1,0 +1,8 @@
+<h2><%= @project.title %></h2>
+	<%= image_tag @project.image.url %>
+	<h3><%= @project.body %></h3>
+	<h3><%= link_to @project.url %></h3>
+
+	<p> This was posted <%= time_ago_in_words @project.created_at %> ago</p>
+
+	
