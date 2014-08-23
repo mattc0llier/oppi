@@ -1,3 +1,10 @@
-<h2>New Post</h2>
+<%= simple_form_for [@project, @post] do |f| %>
 
-<%= render "form" %>
+	<%= f.input :title %>
+	<%= f.input :image %>
+	<%= f.input :body %>
+	<%= f.input :url %>
+
+	<%= f.button :submit %>
+
+<% end %>
