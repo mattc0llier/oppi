@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 			flash[:error] = "not this time buddy, change it up!"
 			render :new
 		end	
+end
 
 	def edit
 		@post = Post.find(params[:id])
@@ -47,8 +48,6 @@ class PostsController < ApplicationController
 		end
 		redirect_to root_path
 	end
-
-  end
 
   private
   def post_params
