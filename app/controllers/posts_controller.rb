@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def show
   	@project = Project.find(params[:project_id])
-  	@post = @project.posts.find(post_params)	
+  	@post = @project.posts.find(params[:id])	
   end
 
   def new
