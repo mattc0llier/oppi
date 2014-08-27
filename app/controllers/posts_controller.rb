@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
-  def index
-  	#@posts = "My string of shit"
-  	@posts = Post.all
-  end
-
+  
   def show
-  	@project = Project.find(params[:project_id])
-  	@post = @project.posts.find(params[:id])	
+  	
+  	@post = Post.find(params[:id])
+
   end
 
   def new
