@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
 root "subjects#index"
   
-	resources :projects 
-
-  resources :projects do
-    resources :posts 
+	resources :subjects do
+	  resources :projects do
+	    resources :posts 
+	  end
   end
-  
+
+
 end

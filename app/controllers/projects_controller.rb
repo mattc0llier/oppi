@@ -5,15 +5,18 @@ def index
 end
 
 def show
-  	@project = Project.find(params[:id])	
+  	@subject = Subject.find(params[:subject_id])
+  	@project = @subject.projects.find(params[:id])	  	
 end
 
 def new
-  	@project = Project.new
+  	@subject = Project.find(params[:subject_id])
+  	@project = @subject.projects.new
 end
 
 def create
-	@project = Project.new(project_params)
+	@subject = Subject.find(params[:subject_id])
+  	@project = @subject.projects.new(project_params)
   	if @project.save
 		flash[:success] = "Thank you for submiting your story!"
 		redirect_to root_path

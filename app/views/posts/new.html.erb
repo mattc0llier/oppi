@@ -1,6 +1,6 @@
 <h2>New</h2>
 
-<%= simple_form_for [@project, @post] do |f| %>
+<%= simple_form_for [@subject, @project, @post], url: subject_project_posts, method: :post do |f| %>
 
 	<%= f.input :title %>
 	<%= f.input :image %>

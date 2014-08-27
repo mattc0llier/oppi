@@ -1,2 +1,23 @@
-<h1>Subjects#show</h1>
-<p>Find me in app/views/subjects/show.html.erb</p>
+<h2><%= @subject.title %></h2>
+	<%# image_tag @subject.image.url %>
+	
+	<%= link_to "Create Project", new_subject_project_path(@subject.id) %>
+
+	<% @subject.projects.each do |project| %>
+
+		<h2><%= link_to project.title, subject_project_path(project.subject_id, project) %></h2>
+
+		<%= image_tag project.image.url %>
+
+		<p><%= project.body %></p>
+
+		<p><%= project.url %></p>
+
+		<%= time_ago_in_words project.created_at %> ago
+
+	<% end %>
+
+
+	
+
+	
