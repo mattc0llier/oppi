@@ -5,11 +5,11 @@
 
 	<p> This was posted <%= time_ago_in_words @project.created_at %> ago</p>
 
-	<%= link_to "Create Post", new_subject_project_post_path(@subject, @project) %>
+	<%= link_to "Create Post", new_post_path(:project_id => @project) %>
 
 	<% @project.posts.each do |post| %>
 
-		<h2><%= link_to post.title, subject_project_post_path(@subject, @project, post) %></h2>
+		<h2><%= link_to post.title, post_path(post) %></h2>
 
 		<%= image_tag post.image.url %>
 

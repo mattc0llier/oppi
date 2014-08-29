@@ -1,7 +1,7 @@
 <h2><%= @subject.title %></h2>
 	<%# image_tag @subject.image.url %>
 	
-	<%= link_to "Create Project", new_subject_project_path(@subject.id) %>
+	<%= link_to "Create Project", new_subject_project_path(@subject) %>
 
 	<% @subject.projects.each do |project| %>
 

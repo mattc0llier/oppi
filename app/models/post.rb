@@ -1,5 +1,4 @@
 class Post < ActiveRecord::Base
-	belongs_to :project
 
 	has_attached_file :image, default_url: "missing.png"
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
@@ -10,4 +9,5 @@ class Post < ActiveRecord::Base
 	validates :title, presence: true 
 
 	validates :body, length: { maximum: 1000, minimum: 20 }
+	
 end
