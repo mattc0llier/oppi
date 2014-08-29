@@ -5,7 +5,7 @@
 
 	<p> This was posted <%= time_ago_in_words @project.created_at %> ago</p>
 
-	<%= link_to "Create Post", new_post_path(@project) %>
+	<%= link_to "Create Post", new_post_path(:project_id => @project) %>
 
 	<% @project.posts.each do |post| %>
 

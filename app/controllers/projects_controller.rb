@@ -10,7 +10,7 @@ def show
 end
 
 def new
-  	@subject = Project.find(params[:subject_id])
+  	@subject = Subject.find(params[:subject_id])
   	@project = @subject.projects.new
 end
 

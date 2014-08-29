@@ -8,16 +8,17 @@ class PostsController < ApplicationController
 
   def new
   	@project = Project.find(params[:project_id])
-  	@post = @project.posts.new
+  	@post = @project.posts.build
   end
 
   def create
   	@project = Project.find(params[:project_id])
-  	@post = @project.posts.new(post_params)
+  	@post = @project.posts.build(post_params)
   	if @post.save
 			flash[:success] = "Thank you for submiting your story!"
 			redirect_to root_path
 		else
+			p @post.errors
 			flash[:error] = "not this time buddy, change it up!"
 			render :new
 		end	
