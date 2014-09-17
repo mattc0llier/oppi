@@ -8,6 +8,6 @@ root "subjects#index"
 
   resources :projects, only: [:index]
   resources :posts
-  get 'tag/:tags', to:'posts#show', as: :tag
+  get 'tag/:tags', to:'posts#index', as: :tag
  
 end

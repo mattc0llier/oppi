@@ -1,8 +1,14 @@
-<%= @posts.each do |post| %>
+<% @posts.each do |post| %>	
 
-	<h2><%= link_to post.title, post_path(post) %></h2>
+	<%= image_tag post.image.url if post.image.url %>
 
+	<h3><%= post.body %></h3>
+	<h3><%= link_to post.url %></h3>
+
+	<p> This was posted <%= time_ago_in_words post.created_at %> ago</p>
+
+	<p>
+		Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+	</p>
 
 <% end %>
-
-<p><%= link_to "New Post", new_post_path %></p>
