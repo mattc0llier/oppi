@@ -1,10 +1,8 @@
 class PostsController < ApplicationController
   
   def show
-  	
   	@post = Post.find(params[:id])
-
-  end
+	end
 
   def new
   	@project = Project.find(params[:project_id])
@@ -18,7 +16,6 @@ class PostsController < ApplicationController
 			flash[:success] = "Thank you for submiting your story!"
 			redirect_to root_path
 		else
-			p @post.errors
 			flash[:error] = "not this time buddy, change it up!"
 			render :new
 		end	
@@ -52,6 +49,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-		params.require(:post).permit(:title, :body, :url, :image, :project_id)
+		params.require(:post).permit(:title, :body, :url, :image, :project_id, :tag_list)
 	end
 end
