@@ -7,6 +7,6 @@ root "subjects#index"
   end
 
   resources :projects, only: [:index]
-  resources :posts, only: [:show, :new, :create, :edit, :destroy]
+  resources :posts, only: [:show, :new, :create, :edit, :update, :destroy]
  
 end
