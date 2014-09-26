@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
+  get 'users/edit'
+
 root "subjects#index"
   
 	resources :subjects do
