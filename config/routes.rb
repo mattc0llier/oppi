@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
 root "subjects#index"
   
 	resources :subjects do
@@ -16,8 +10,11 @@ root "subjects#index"
   resources :projects, only: [:index]
   resources :posts
   resources :users do 
-  	resource :session
+  	resources :posts
   end
+
+  resource :session, only: [:new, :create, :destroy]
+
   get 'tag/:tags', to:'posts#index', as: :tag
 
 
