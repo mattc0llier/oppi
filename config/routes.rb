@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
-
-  get 'users/edit'
 
 root "subjects#index"
   
@@ -12,6 +9,11 @@ root "subjects#index"
 
   resources :projects, only: [:index]
   resources :posts
+  resources :users do 
+  	resource :session
+  end
   get 'tag/:tags', to:'posts#index', as: :tag
+
+
  
 end
