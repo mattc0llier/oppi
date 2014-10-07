@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 	validates_format_of :url, with: URI.regexp
 
 
-	validates :body, length: { maximum: 1000, minimum: 20 }
+	validates :body, length: { maximum: 1000, minimum: 10 }
 
 	acts_as_taggable 
   	acts_as_taggable_on :skills, :interests
