@@ -10,8 +10,11 @@
 <body>
 
 	<%= link_to root_path do %>
-        <%= image_tag "logo.png" %>
-    <% end %>
+      <%= image_tag "logo.png" %>
+  <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
