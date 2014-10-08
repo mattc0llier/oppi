@@ -3,13 +3,13 @@
 	<h3><%= @project.body %></h3>
 	<h3><%= link_to @project.url %></h3>
 
-	<p> This was posted <%= time_ago_in_words @project.created_at %> ago</p>
+	<p> Project created at <%= time_ago_in_words @project.created_at %> ago</p>
 
 	<%= link_to "Create Post", new_post_path(:project_id => @project) %>
 
 	<% @project.posts.each do |post| %>
 
-		<h2><%= link_to post.title, post_path(post) %></h2>
+		<h2><%= link_to post.title, project_posts_path(post) %></h2>
 
 		<%= image_tag post.image.url %>
 
@@ -21,6 +21,8 @@
 			Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
 		</p>
 
-		<%= time_ago_in_words post.created_at %> ago
+		
+		<% @time_ago = time_ago_in_words post.created_at %>
+		<%= link_to @time_ago, project_posts_path(post) %>
 
 	<% end %>

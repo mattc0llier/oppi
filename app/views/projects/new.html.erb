@@ -1,11 +1,15 @@
 
-<%= simple_form_for [@subject, @project] do |f| %>
+<%= simple_form_for @project do |f| %>
+
 	
 	<%= f.input :title %>
 	<%= f.input :image %>
 	<%= f.input :body %>
 	<%= f.input :url %>
+	<%= f.collection_select :subject_id, Subject.order(:title),:id,:title %>
 
-	<%= f.button :submit %>
+	<%= link_to "New Subject", new_subject_path %>
+
+	<p><%= f.button :submit %></p>
 
 <% end %>
