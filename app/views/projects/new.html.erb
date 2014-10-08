@@ -6,7 +6,6 @@
 	<%= f.input :image %>
 	<%= f.input :body %>
 	<%= f.input :url %>
-	<%= f.collection_select :subject_id, Subject.order(:title),:id,:title %>
 
 	<%= link_to "New Subject", new_subject_path %>
 
