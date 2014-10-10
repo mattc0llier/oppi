@@ -1,5 +1,6 @@
 
 <%= simple_form_for @project do |f| %>
+<%= hidden_field_tag :subject_id, params[:subject_id] %>
 
 	
 	<%= f.input :title %>

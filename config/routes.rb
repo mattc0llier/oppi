@@ -4,11 +4,9 @@ Rails.application.routes.draw do
 	root "projects#index"
   
 	resources :subjects
-	resources :projects do 
+	resources :projects  
   	resources :posts
-  end
 
-  resources :posts
   get 'tag/:tags', to:'posts#index', as: :tag
  
 end
