@@ -8,18 +8,17 @@ class PostsController < ApplicationController
 	end
 
   def show
-  	@project = Project.find(params[:project_id])
-  	@post = @project.posts.find(params[:id])
+  	@post = Post.find(params[:id])
 	end
 
   def new
   	@project = Project.find(params[:project_id])
-  	@post = @project.posts.new
+  	@post = @project.posts.build
   end
 
   def create
   	@project = Project.find(params[:project_id])
-  	@post = @project.posts.new(post_params)
+  	@post = @project.posts.build(post_params)
   	if @post.save
 			flash[:success] = "Thank you for submiting your story!"
 			redirect_to root_path
