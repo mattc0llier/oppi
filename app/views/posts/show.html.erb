@@ -1,16 +1,19 @@
+
 <h2><%= @post.title %></h2>
-	<%= image_tag @post.image.url if @post.image.url %>
-	<h3><%= @post.body %></h3>
-	<h3><%= link_to @post.url %></h3>
+	
+<%= image_tag @post.image.url if @post.image.url %>
 
-	<p> This was posted <%= time_ago_in_words @post.created_at %> ago</p>
+<h3><%= @post.body %></h3>
+<h3><%= link_to @post.url %></h3>
 
-	<p>
-		Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
-	</p>
+<p> This was posted <%= time_ago_in_words @post.created_at %> ago</p>
 
-	<%= link_to "Edit", edit_post_path(@post) %>
-	<%= link_to "Delete", post_path(@post), method: :delete %>
+<p>
+	Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+</p>
+
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= link_to "Delete", post_path(@post), method: :delete %>
 
 	
 
