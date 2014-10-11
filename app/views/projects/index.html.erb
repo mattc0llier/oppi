@@ -1,4 +1,8 @@
-<p><%= link_to "Create Project", new_project_path %></p>
+<% if user_signed_in? %>
+	<p><%= link_to "Create Project", new_project_path %></p>
+<% else %>
+<% end %>
+
 
 <%= @projects.each do |project| %>
 
