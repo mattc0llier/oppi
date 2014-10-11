@@ -5,7 +5,10 @@
 
 	<p> Project created at <%= time_ago_in_words @project.created_at %> ago</p>
 
-	<%= link_to "Create Post", new_post_path(:project_id => @project) %>
+	<% if user_signed_in? %>
+		<%= link_to "Create Post", new_post_path(:project_id => @project) %>
+	<% else %>
+	<% end %>
 
 	<% @project.posts.each do |post| %>
 
