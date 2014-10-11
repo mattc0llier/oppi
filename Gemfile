@@ -50,6 +50,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
 gem 'aasm', '~> 3.3.3'
 gem 'acts-as-taggable-on'
+gem 'cancancan', '~> 1.9'
 
 group :production do 
 	gem 'pg'
