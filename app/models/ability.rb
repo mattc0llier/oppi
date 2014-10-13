@@ -4,19 +4,18 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user
  
-    if user.role? :super_admin
+     if user.role == "admin"
       can :manage, :all
-    elsif user.role? :product_admin
-      can :manage, [Product, Asset, Issue]
-    elsif user.role? :product_team
-      can :read, [Product, Asset]
-      # manage products, assets he owns
-      can :manage, Product do |product|
-        product.try(:owner) == user
-      end
-      can :manage, Asset do |asset|
-        asset.assetable.try(:owner) == user
-      end
+    elsif user.role == "author"
+      can :create, Post
+      can :update, Post, :user_id => user.id
+      can [:show, :update], User, :id => user.id
+    elsif user.role == "owner"
+      can :update, Project
+      can [:show, :update], User, :id => user.id
+    else
+      can [:show, :update], User, :id => user.id
+    end
   end
     # Define abilities for the passed in user here. For example:
     #

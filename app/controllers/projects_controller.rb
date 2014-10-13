@@ -11,7 +11,8 @@ def show
 end
 
 def new
-	@project = Project.new
+	@user = current_user
+	@project = @user.projects.new
 end
 
 def create
