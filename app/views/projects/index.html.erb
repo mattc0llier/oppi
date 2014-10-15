@@ -3,6 +3,7 @@
 <% else %>
 <% end %>
 
+<% @projects = Project.where(:user_id => current_user) %>
 
 <%= @projects.each do |project| %>
 
