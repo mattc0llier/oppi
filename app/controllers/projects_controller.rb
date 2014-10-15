@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+before_filter :authenticate_user!, except: [:index, :show]
+
 def index
 	@projects = Project.all
 end
@@ -9,18 +11,14 @@ def show
 end
 
 def new
-	@project = Project.new
+	@project = current_user.projects.build
 end
 
 def create
-  	@project = Project.new(project_params)
-  	if @project.save
-		flash[:success] = "Thank you for submiting your story!"
-		redirect_to root_path
-	else
-		flash[:error] = "not this time buddy, change it up!"
-		render :new
-	end
+  	@project = current_user.projects.new(project_params)
+  	@project.save
+		
+	redirect_to root_path
 end
 
 def edit
