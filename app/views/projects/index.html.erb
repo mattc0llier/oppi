@@ -1,9 +1,10 @@
 <% if user_signed_in? %>
 	<p><%= link_to "Create Project", new_project_path %></p>
+	<% @projects = Project.where(:user_id => current_user) %>
 <% else %>
 <% end %>
 
-<% @projects = Project.where(:user_id => current_user) %>
+
 
 <%= @projects.each do |project| %>
 
