@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+include Workflow
 
 	belongs_to :user
 	has_many :posts
@@ -10,5 +11,19 @@ class Project < ActiveRecord::Base
 	validates :url, presence: true
 	validates :title, presence: true 
 	validates :body, length: { maximum: 1000, minimum: 20 }
+
+	
+
+	  scope :open_orders, -> { where(workflow_state: "open") }
+
+	  workflow do
+	    state :pending do
+	      event :interest, transition_to: :current
+	    end
+	    state :current do
+	      event :activate, transition_to: :completed
+	    end
+	    state :completed
+	  end
 
 end
