@@ -48,7 +48,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
-gem 'aasm', '~> 3.3.3'
+gem 'workflow'
 gem 'acts-as-taggable-on'
 gem 'cancancan', '~> 1.9'
 
