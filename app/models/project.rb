@@ -1,5 +1,4 @@
 class Project < ActiveRecord::Base
-include Workflow
 
 	belongs_to :user
 	has_many :posts
@@ -13,8 +12,7 @@ include Workflow
 	validates :body, length: { maximum: 1000, minimum: 20 }
 
 	
-
-	  scope :open_orders, -> { where(workflow_state: "open") }
+include Workflow
 
 	  workflow do
 	    state :pending do
