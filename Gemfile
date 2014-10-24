@@ -52,6 +52,9 @@ gem 'aasm', '~> 3.3.3'
 gem 'acts-as-taggable-on'
 gem 'cancancan', '~> 1.9'
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
