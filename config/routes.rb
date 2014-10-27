@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  devise_for :users
 
 resources :projects  
-  resources :posts
+resources :posts
 
   resources :users do
 	resources :projects  
