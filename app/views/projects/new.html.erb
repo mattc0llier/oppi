@@ -1,33 +1,13 @@
-<form role="form">
-<%= simple_form_for @project do |f| %>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Title</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"><%= f.input :title %></input>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+<div class="container">
 
+	<%= simple_form_for @project do |f| %>
 
+	  <%= f.input :title, placeholder: 'Enter title' %>
+	  <%= f.input :body, placeholder: 'What happened...' %>
+	  <%= f.input :image %>
+	  <%= f.input :url, placeholder: 'Learning link' %>
+	  
+	  <%= f.button :submit %>
+	<% end %>
 	
-	
-	<%= f.input :image %>
-	<%= f.input :body %>
-	<%= f.input :url %>
-
-	<p><%= f.button :submit %></p>
-
-<% end %>
+</div>

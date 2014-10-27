@@ -1,7 +1,9 @@
 <div class="container">
 
 	<% if user_signed_in? %>
-		<p><%= link_to "Create Project", new_project_path %></p>
+		<button type="button" class="btn btn-default">
+		<%= link_to "Create Project", new_project_path %>
+		</button>
 		<% @projects = Project.where(:user_id => current_user) %>
 	<% else %>
 	<% end %>
