@@ -10,22 +10,23 @@
 	<% else %>
 	<% end %>
 
-	<% @project.posts.each do |post| %>
-
-		<h2><%= link_to post.title, post_path(post) %></h2>
-
-		<%= image_tag post.image.url %>
-
-		<p><%= post.body %></p>
-
-		<p><%= post.url %></p>
-
-		<p>
-			Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
-		</p>
+	<div class="panel panel-default">
+		<% @project.posts.each do |post| %>
+	  		<div class="panel-heading"><%= link_to post.title, post_path(post) %></div>
+	  			<div class="panel-body">
+					<%= image_tag post.image.url %>
+					<p><%= post.body %></p>
+					<p><%= post.url %></p>
+	  			</div>
+	  			<div class="panel-footer">
+	  				<% @time_ago = time_ago_in_words post.created_at %>
+					<%= link_to @time_ago, post_path(post) %>
+					Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+	  			</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
 
 		
-		<% @time_ago = time_ago_in_words post.created_at %>
-		<%= link_to @time_ago, post_path(post) %>
-
-	<% end %>
+	
