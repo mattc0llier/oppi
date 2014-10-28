@@ -15,7 +15,10 @@
 
 		<% @project.posts.each do |post| %>
 			<div class="panel panel-default">
-		  		<div class="panel-heading"><%= link_to post.title, post_path(post) %></div>
+				<% if post.title? %>
+		  			<div class="panel-heading"><%= link_to post.title, post_path(post) %></div>
+		  		<% else %>
+				<% end %>
 		  			<div class="panel-body">
 
 		  				<% if post.image? %>
@@ -25,11 +28,13 @@
 						<p><%= post.body %></p>
 						<p><%= post.url %></p>
 		  			</div>
-		  			<div class="panel-footer">
-		  				<% @time_ago = time_ago_in_words post.created_at %>
-						<%= link_to @time_ago, post_path(post) %>
-						Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
-		  			</div>
+			  			<div class="panel-footer">
+							<%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+							<div class="text-right">
+								<% @time_ago = time_ago_in_words post.created_at %>
+								<%= link_to @time_ago, post_path(post) %>
+							</div>
+			  			</div>
 					</div>
 				</div>
 			</div>
