@@ -50,13 +50,13 @@
 		  			</div>
 			  			<div class="panel-footer" >
 			  				<div class="row">
-			  				<div class="col-md-10">
-			  					<%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
-			  				</div>
-			  				<div class="col-md-2" "text-right">
-			  					<% @time_ago = time_ago_in_words post.created_at %>
-								<%= link_to @time_ago, post_path(post) %>
-			  				</div>
+				  				<div class="col-md-10">
+				  					<%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+				  				</div>
+				  				<div class="col-md-2" "text-right">
+				  					<% @time_ago = time_ago_in_words post.created_at %>
+									<%= link_to @time_ago, post_path(post) %>
+				  				</div>
 			  				</div>
 			  			</div>
 					</div>
