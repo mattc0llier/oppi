@@ -4,6 +4,7 @@
 		<button type="button" class="btn btn-default">
 		<%= link_to "Create Project", new_project_path %>
 		</button>
+		<p></p>
 		<% @projects = Project.where(:user_id => current_user) %>
 	<% else %>
 	<% end %>
