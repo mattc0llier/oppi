@@ -49,7 +49,7 @@ end
 
 private
 def project_params
-	params.require(:project).permit(:title, :body, :url, :image)
+	params.require(:project).permit(:title, :body, :url, :image, :user_id)
 end
 
 end

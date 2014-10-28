@@ -1,14 +1,16 @@
-<h2>New</h2>
+<div class="container">
+	<h2>New</h2>
 
-<%= simple_form_for [@user, @post], url: posts_path, method: :post do |f| %>
-<%= hidden_field_tag :project_id, params[:project_id] %>
+	<%= simple_form_for [@user, @post], url: posts_path, method: :post do |f| %>
+	<%= hidden_field_tag :project_id, params[:project_id] %>
 
-	<%= f.input :title %>
-	<%= f.input :image %>
-	<%= f.input :body %>
-	<%= f.input :url %>
-	<%= f.input :tag_list %>
+		<%= f.input :title %>
+		<%= f.input :image %>
+		<%= f.input :body %>
+		<%= f.input :url %>
+		<%= f.input :tag_list %>
 
-	<%= f.button :submit %>
+		<%= f.button :submit %>
 
-<% end %>
+	<% end %>
+</div>
