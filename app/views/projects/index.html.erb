@@ -17,7 +17,7 @@
 			      <%= link_to_image (project.image.url), project_path(project) %>
 			      <div class="caption">
 			        <h2><%= link_to project.title, project_path(project) %></h2>
-			        <p><%= project.body %></p>
+			        <p><%= truncate (project.body), :length =>180 %></p>
 			      </div>
 			    </div>
 			  </div>
