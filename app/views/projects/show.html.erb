@@ -19,8 +19,14 @@
     </div><!-- /.carousel -->
 
 
+
+
 </div>
 <div class="container">
+
+	<%= link_to "Edit", edit_project_path(@project) %>
+	<%= link_to "Delete", project_path(@project), method: :delete %>
+
 		<% if user_signed_in? %>
 			<%= link_to "Create Post", new_post_path(:project_id => @project) %>
 		<% else %>
