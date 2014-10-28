@@ -1,11 +1,29 @@
+<div class="container-fluid">
+
+	<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= image_tag @project.image.url %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><%= @project.title %></h1>
+              <p><%= @project.body %></p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.carousel -->
+
+
+</div>
 <div class="container">
-	<h2><%= @project.title %></h2>
-		<%= image_tag @project.image.url %>
-		<h4><%= @project.body %></h4>
-		<h3><%= link_to @project.url %></h3>
-
-		<p> Project created at <%= time_ago_in_words @project.created_at %> ago</p>
-
 		<% if user_signed_in? %>
 			<%= link_to "Create Post", new_post_path(:project_id => @project) %>
 		<% else %>
