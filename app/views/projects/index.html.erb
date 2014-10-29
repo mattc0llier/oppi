@@ -14,7 +14,7 @@
 		<%= @projects.each do |project| %>
 			  <div class="col-sm-6 col-md-4">
 			    <div class="thumbnail" style="min-height:400px;height:400px;">
-			      <%= link_to_image (project.image.url ), project_path(project) %>
+			      <%= link_to_image (project.image.url), project_path(project) %>
 			      <div class="caption">
 			        <h2><%= link_to project.title, project_path(project) %></h2>
 			        <p><%= truncate (project.body), :length =>180 %></p>

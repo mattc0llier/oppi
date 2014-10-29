@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
 	has_many :posts
 	
 
-	has_attached_file :image, default_url: "missing.png"
+	has_attached_file :image, default_url: "missing.png", :size => { :small => "1000x667>" }
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 	validates_format_of :url, with: URI.regexp
