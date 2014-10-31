@@ -1,8 +1,8 @@
-<div class="container-fluid">
+
 
 	<!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel" data-ride="carousel">
       <!-- Indicators -->
       <div class="carousel-inner">
         <div class="item active">
@@ -10,8 +10,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1><%= @project.title %></h1>
-              <p><%= @project.body %></p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Follow</a></p>
             </div>
           </div>
         </div>
@@ -19,7 +17,7 @@
     </div><!-- /.carousel -->
 
 
-</div>
+
 <div class="container">
 		<% if user_signed_in? %>
 			<%= link_to "Create Post", new_post_path(:project_id => @project) %>
