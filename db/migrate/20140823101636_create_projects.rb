@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.string :url
-      t.integer :subject_id
+      
 
       t.timestamps
     end
