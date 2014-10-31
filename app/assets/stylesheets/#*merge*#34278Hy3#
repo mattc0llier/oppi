@@ -1,11 +1,11 @@
 @import "bootstrap-sprockets"
 
-$thumbnail-padding: 0px
 $navbar-default-bg: #3E5C6E
 $navbar-height: 50px
 $navbar-default-link-color: #fff
 $navbar-default-brand-color: #fff
 $link-color: #000
+$thumbnail-padding: 0px
 
 @import "bootstrap"
 
