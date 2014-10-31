@@ -1,0 +1,13 @@
+<div class="container">
+
+	<%= simple_form_for @project do |f| %>
+
+	  <%= f.input :title, placeholder: 'Enter title' %>
+	  <%= f.input :body, placeholder: 'What happened...' %>
+	  <%= f.input :image %>
+	  <%= f.input :url, placeholder: 'Learning link' %>
+	  
+	  <%= f.button :submit %>
+	<% end %>
+	
+</div>
