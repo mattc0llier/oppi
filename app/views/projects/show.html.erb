@@ -1,22 +1,16 @@
-
-
-	<!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel" data-ride="carousel">
-      <!-- Indicators -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <%= image_tag @project.image.url %>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1><%= @project.title %></h1>
-            </div>
-          </div>
+<div class="jumbotron">
+      <div class="container">
+      	<div class="row">
+  			<div class="col-xs-12 col-sm-6 col-md-8">
+  				<h1><%= @project.title %></h1>
+        		<p><%= @project.body %></p>
+        	</div>
+			<div class="col-xs-6 col-md-4">
+				<%= image_tag @project.image.url %>
+			</div>
         </div>
       </div>
-    </div><!-- /.carousel -->
-
-
+</div>
 
 <div class="container">
 		<% if user_signed_in? %>
@@ -39,6 +33,7 @@
 							<%= image_tag post.image.url %>
 						<% else %>
 						<% end %>
+						<p></p>
 						<p><%= post.body %></p>
 						<p><%= post.url %></p>
 		  			</div>
