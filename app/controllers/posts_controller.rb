@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   	@post.user_id = current_user.id
   	if @post.save
 			flash[:success] = "Thank you for submiting your story!"
-			redirect_to root_path
+			redirect_to post_path(@post)
 		else
 			flash[:error] = "not this time buddy, change it up!"
 			render :new

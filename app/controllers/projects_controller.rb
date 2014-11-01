@@ -42,7 +42,7 @@ def destroy
 		flash[:success] = "Successfully destroyed '#{@project.title}'" 
 		@project.destroy
 	else 
-		flash[:error] = "Oops, no post found with id #{params [:id]}"
+		flash[:error] = "Oops, couldn't be deleted"
 	end
 	redirect_to root_path
 end
