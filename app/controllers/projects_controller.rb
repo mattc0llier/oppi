@@ -7,7 +7,7 @@ def index
 end
 
 def show
-  	@project = Project.find(params[:id])	  	
+  	@project = Project.friendly.find(params[:id])	  	
 end
 
 def new
@@ -42,14 +42,14 @@ def destroy
 		flash[:success] = "Successfully destroyed '#{@project.title}'" 
 		@project.destroy
 	else 
-		flash[:error] = "Oops, no post found with id #{params [:id]}"
+		flash[:error] = "Oops, couldn't be deleted"
 	end
 	redirect_to root_path
 end
 
 private
 def project_params
-	params.require(:project).permit(:title, :body, :url, :image)
+	params.require(:project).permit(:title, :body, :url, :image, :user_id)
 end
 
 end

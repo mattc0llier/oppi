@@ -1,19 +1,42 @@
+<div class="container">
 
-<h2><%= @post.title %></h2>
-	
-<%= image_tag @post.image.url if @post.image.url %>
+			<div class="panel panel-default">
+				<% if @post.title? %>
+		  			<div class="panel-heading">
+		  				<h3 class="panel-title"><%= link_to @post.title, post_path(@post) %></h3>
+		  			</div>
+		  		<% else %>
+				<% end %>
+		  			<div class="panel-body">
+		  				<% if @post.image? %>
+							<%= image_tag @post.image.url %>
+						<% else %>
+						<% end %>
+						<p></p>
+						<p><%= @post.body %></p>
+						<p><%= @post.url %></p>
+		  			</div>
+			  			<div class="panel-footer" >
+			  				<div class="row">
+				  				<div class="col-md-10">
+				  					<%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+				  				</div>
+				  				<div class="col-md-2" "text-right">
+				  					<% @time_ago = time_ago_in_words @post.created_at %>
+									<%= link_to @time_ago, post_path(@post) %>
+									<%= link_to "Edit", edit_post_path(@post) %>
+									<%= link_to "Delete", post_path(@post), method: :delete %>
+				  				</div>
+			  				</div>
+			  			</div>	
+			</div>
 
-<h3><%= @post.body %></h3>
-<h3><%= link_to @post.url %></h3>
+			<% @posts.each do |post| %>
+			<p><%= post.url %></p>
+			<% end %>
+</div> <!-- /container -->
 
-<p> This was posted <%= time_ago_in_words @post.created_at %> ago</p>
 
-<p>
-	Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
-</p>
-
-<%= link_to "Edit", edit_post_path(@post) %>
-<%= link_to "Delete", post_path(@post), method: :delete %>
 
 	
 
