@@ -14,4 +14,8 @@ class Project < ActiveRecord::Base
 
 	validates :body, length: { maximum: 1000, minimum: 20 }
 
+	extend FriendlyId
+	friendly_id :title, use: :slugged
+	
+
 end
