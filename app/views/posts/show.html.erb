@@ -30,6 +30,10 @@
 			  				</div>
 			  			</div>	
 			</div>
+
+			<% @posts.each do |post| %>
+			<p><%= post.url %></p>
+			<% end %>
 </div> <!-- /container -->
 
 
