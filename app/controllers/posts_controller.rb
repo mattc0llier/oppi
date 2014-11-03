@@ -12,12 +12,12 @@ class PostsController < ApplicationController
 	end
 
   def new
-  	@project = Project.find(params[:project_id])
+  	@project = Project.friendly.find(params[:project_id])
   	@post = @project.posts.build
   end
 
   def create
-  	@project = Project.find(params[:project_id])
+  	@project = Project.friendly.find(params[:project_id])
   	@post = @project.posts.build(post_params)
   	@post.user_id = current_user.id
   	if @post.save
