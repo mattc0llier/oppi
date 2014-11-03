@@ -22,11 +22,11 @@ def create
 end
 
 def edit
-	@project = Project.find(params[:id])
+	@project = Project.friendly.find(params[:id])
 end
 
 def update
-	@project = Project.find(params[:id])
+	@project = Project.friendly.find(params[:id])
 	if @project.update(project_params)
 		flash[:success] = "Thank you for updating your story"
 		redirect_to project_path(@project)
@@ -37,7 +37,7 @@ def update
 end
 
 def destroy
-	@project = Project.find(params[:id])
+	@project = Project.friendly.find(params[:id])
 	if @pproject.present?
 		flash[:success] = "Successfully destroyed '#{@project.title}'" 
 		@project.destroy
