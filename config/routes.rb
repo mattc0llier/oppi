@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-	root "main#index"
+root "main#index"
 
  devise_for :users
 
 resources :projects  
 resources :posts
-resources :main
+resources :main, :only => [:index]
 
   resources :users do
 	resources :projects  

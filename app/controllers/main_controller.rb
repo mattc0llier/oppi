@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-	index def 
-		@main = Project.all
-	end
+  def index
+  	@projects = Project.all
+  end
 end
