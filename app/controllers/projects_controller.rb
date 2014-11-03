@@ -7,7 +7,7 @@ def index
 end
 
 def show
-  	@project = Project.friendly.find(params[:id])	  	
+  	@project = Project.find(params[:id])	  	
 end
 
 def new
