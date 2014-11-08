@@ -4,7 +4,8 @@ root "main#index"
 
  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-resources :projects  
+
+resources :projects
 resources :posts
 resources :main, :only => [:index]
 
@@ -14,5 +15,9 @@ resources :main, :only => [:index]
   end
   
   get 'tag/:tags', to:'posts#index', as: :tag
+
+ devise_scope :user do
+  get 'sign_out', :to => :destroy_user_session
+end
  
 end
